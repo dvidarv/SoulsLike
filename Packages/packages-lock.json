@@ -233,9 +233,9 @@
       "url": "https://packages.unity.com"
     },
     "com.veriorpies.parrelsync": {
-      "version": "file:C:/Users/dvida/OneDrive/Escritorio/David/UnityProjects/SoulsLike/Packages/ParrelSync",
+      "version": "file:ParrelSync",
       "depth": 0,
-      "source": "local",
+      "source": "embedded",
       "dependencies": {}
     },
     "com.unity.modules.accessibility": {

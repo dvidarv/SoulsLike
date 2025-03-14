@@ -10,6 +10,9 @@ public class PlayerInputManager : MonoBehaviour
     PlayerControls playerControls;
 
     [SerializeField] Vector2 movementInput;
+    public float verticalInput;
+    public float horizontalInput;
+    public float moveAmount;
 
     private void Awake()
     {
@@ -63,5 +66,45 @@ public class PlayerInputManager : MonoBehaviour
     {
         // IF WE DESTROY THIS OBJECT, UNSUBSCRIBE FROM THIS EVENT
         SceneManager.activeSceneChanged -= OnSceneChange;
+    }
+
+    //IF WE MINIMIZE OR LOWER THE WINDOW, STOP ADJUSTING INPUTS
+    private void OnApplicationFocus(bool focus)
+    {
+        if (enabled)
+        {
+            if (focus)
+            {
+                playerControls.Enable();
+            }
+            else
+            {
+                playerControls.Disable();
+            }
+        }
+    }
+
+    private void Update()
+    {
+        HandleMovementInput();
+    }
+
+    private void HandleMovementInput()
+    {
+        verticalInput = movementInput.y;
+        horizontalInput = movementInput.x;
+
+        // RETURNS THE ABSOLUTE NUMBER WITHOUT NEGATIVE SIGN SO IT IS ALWAYS POSITIVE
+        moveAmount = Mathf.Clamp01(Mathf.Abs(verticalInput) + Mathf.Abs(horizontalInput));
+
+        // WE CLAMP THE VALUES, SO THEY ARE 0, 0.5 OR 1
+        if(moveAmount > 0 && moveAmount <= .5f)
+        {
+            moveAmount = .5f;
+        }
+        else if(moveAmount > .5f && moveAmount <= 1)
+        {
+            moveAmount = 1f;
+        }
     }
 }

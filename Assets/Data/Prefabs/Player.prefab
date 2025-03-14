@@ -65,6 +65,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d4509637ed1bc7e45a6c4291fb33a631, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7633192114508153688}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d4509637ed1bc7e45a6c4291fb33a631, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8858257600059243041}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d4509637ed1bc7e45a6c4291fb33a631, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3948064774586018918}
   m_SourcePrefab: {fileID: 100100000, guid: d4509637ed1bc7e45a6c4291fb33a631, type: 3}
 --- !u!1 &5530035522663790258 stripped
 GameObject:
@@ -108,6 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cb1535f784b2a4d8b78eb27957483a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  characterController: {fileID: 0}
 --- !u!114 &7633192114508153688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,3 +128,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0fe37c8693a1544a143dd9c6833108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verticalMovement: 0
+  horizontalMovement: 0
+  moveAmount: 0
+  walkingSpeed: 2
+  runningSpeed: 5
+--- !u!143 &-8858257600059243041
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5530035522663790258}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.8
+  m_Radius: 0.23
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &-3948064774586018918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5530035522663790258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6bb934e782e0441a0afa3dfccc64ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  networkPosition:
+    m_InternalValue: {x: 0, y: 0, z: 0}
+  networkPositionVelocity: {x: 0, y: 0, z: 0}
+  networkPositionSmoothTime: 0.1

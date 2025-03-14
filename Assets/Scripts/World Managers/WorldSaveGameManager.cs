@@ -27,4 +27,8 @@ public class WorldSaveGameManager : MonoBehaviour
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(worldSceneIndex);
         yield return null;
     }
+    public int GetWorldSceneIndex()
+    {
+        return worldSceneIndex;
+    }
 }
